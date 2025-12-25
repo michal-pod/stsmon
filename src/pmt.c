@@ -62,6 +62,7 @@ void handle_pmt(uint16_t pid, uint8_t *section)
             case PMT_STREAMTYPE_AUDIO_ADTS:
                 has_data = true;
             default:
+                ;
             }
             uint8_t* desc = pmtn_get_descs(es);
             uint16_t desc_length = pmtn_get_desclength(es) + DESCS_HEADER_SIZE;
@@ -78,6 +79,7 @@ void handle_pmt(uint16_t pid, uint8_t *section)
                     case 0x7f: // DTS descriptor
                         has_data = true;
                     default:
+                        ;
                 }
                 j++;
             }
